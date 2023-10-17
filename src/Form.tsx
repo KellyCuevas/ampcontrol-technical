@@ -9,17 +9,83 @@ import {
   FormLabel,
   Button,
 } from "@mui/material";
-// import { SelectChangeEvent } from "@mui/material/Select";
-import React, { useState } from "react";
 
-const Form = () => {
-  const [options, setOptions] = useState({
-    miles: 0,
-    vehicleSize: "",
-    environment: "",
+import { useQueries } from "@tanstack/react-query";
+import { getCurrentYear } from "./utils/getCurrentYear";
+import { getVehicleData, getVehicleId } from "./api/vehicleApi";
+
+type Options = {
+  miles: number;
+  vehicleSize: number;
+  environment: string;
+  type: string;
+};
+
+type FormProps = {
+  options: Options;
+  setOptions: React.Dispatch<React.SetStateAction<Options>>;
+};
+
+const Form = ({ options, setOptions }: FormProps) => {
+  const year = getCurrentYear();
+
+  const mostPopularGasVehicles = [
+    { year, make: "Chevrolet", model: "Malibu", size: "sedan/wagon" },
+    { year, make: "Toyota", model: "RAV4", size: "SUV" },
+    { year, make: "Chrysler", model: "Pacifica", size: "van" },
+    {
+      year,
+      make: "Ford",
+      model: "F-Series",
+      size: "pickup",
+      mpg_city: 20,
+      mpg_highway: 26,
+    },
+    {
+      year,
+      make: "Mercedes Benz",
+      model: "Sprinter",
+      size: "passenger van/shuttle bus",
+      mpg: 17,
+    },
+  ];
+
+  const results = useQueries({
+    queries: mostPopularGasVehicles?.map((vehicle) => {
+      return {
+        queryKey: ["vehicleId", year, vehicle?.make, vehicle?.model],
+        queryFn: () => getVehicleId(year, vehicle?.make, vehicle?.model),
+      };
+    }),
   });
 
-  const handleChange = (e) => {
+  console.log(results);
+  const vehicleDetail = useQueries({
+    queries: results?.map((vehicle, i) => {
+      return {
+        queryKey: [
+          mostPopularGasVehicles[i]?.size,
+          vehicle?.data?.menuItem?.value,
+        ],
+        queryFn: () => getVehicleData(vehicle?.data?.menuItem?.value),
+        select: (vehicle: {
+          city08: number;
+          comb08: number;
+          highway08: number;
+        }) => {
+          if (options?.environment === "city")
+            return vehicle?.city08 !== 0 ? vehicle?.city08 : vehicle?.comb08;
+          else if (options?.environment === "highway")
+            return vehicle?.highway08 !== 0
+              ? vehicle?.highway08
+              : vehicle?.highway08;
+        },
+      };
+    }),
+  });
+  console.log(vehicleDetail);
+
+  const handleChange = (e: any) => {
     e.preventDefault;
     const { value, name } = e.target;
     setOptions((prev) => {

@@ -10,7 +10,7 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "@tanstack/query"],
+  plugins: ["react-refresh", "@tanstack/query", "react", "react-hooks"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
