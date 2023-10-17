@@ -3,6 +3,8 @@ import axios from "axios";
 const vehicleApi = axios.create({
   // baseURL: "https://www.fueleconomy.gov",
   // baseURL: "/fuelApi",
+  baseURL:
+    "https://datasource.kapsarc.org/api/explore/v2.1/catalog/datasets/us-vehicle-fuel-economy-data-1984-2017/records",
 });
 
 export const getFuelPrices = async () => {
