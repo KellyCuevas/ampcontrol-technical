@@ -15,14 +15,20 @@ const Form = () => {
   const { options, setOptions } = useOptions();
 
   const handleChange = (e: any) => {
-    e.preventDefault;
+    e.preventDefault();
     const { value, name } = e.target;
     setOptions((prev) => {
-      return { ...prev, [name]: value };
+      return { ...prev, [name]: value, didSubmit: false };
     });
   };
 
-  // console.log(options);
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setOptions((prev) => {
+      return { ...prev, didSubmit: true };
+    });
+  };
+  console.log(options);
   return (
     <>
       <form className="options-form">
@@ -33,7 +39,7 @@ const Form = () => {
           type="number"
           name="miles"
           value={options.miles}
-          // onChange={handleChange}
+          onChange={handleChange}
           InputLabelProps={{
             shrink: true,
           }}
@@ -44,16 +50,21 @@ const Form = () => {
             sx={{ minWidth: 120 }}
             labelId="Vehicle-Size"
             id="vehicle-size"
-            name="vehicleSize"
+            name="vSize"
             label="Vehicle Size"
             value={options.vSize}
-            // onChange={handleChange}
+            onChange={handleChange}
           >
-            <MenuItem value={27}>Sedan/Wagon</MenuItem>
-            <MenuItem value={29}>SUV</MenuItem>
-            <MenuItem value={9}>Van</MenuItem>
-            <MenuItem value={25}>Pickup</MenuItem>
-            <MenuItem value={3}>Passenger Van/Shuttle Bus</MenuItem>
+            <MenuItem value={"Compact Cars"}>Compact Car</MenuItem>
+            <MenuItem value={"Midsize Cars"}>Midsize Car</MenuItem>
+            <MenuItem value={"Standard Sport Utility Vehicle 4WD"}>
+              SUV
+            </MenuItem>
+
+            <MenuItem value={"Standard Pickup Trucks 4WD"}>
+              Pickup Truck
+            </MenuItem>
+            <MenuItem value={"Minivan - 2WD"}>Minivan</MenuItem>
           </Select>
         </div>
 
@@ -62,12 +73,12 @@ const Form = () => {
           <RadioGroup
             defaultValue="city"
             aria-labelledby="driving-environment"
-            name="environment"
-            // onChange={handleChange}
+            name="dEnv"
+            onChange={handleChange}
           >
-            <FormControlLabel value="city" control={<Radio />} label="City" />
+            <FormControlLabel value="city08" control={<Radio />} label="City" />
             <FormControlLabel
-              value="highway"
+              value="highway08"
               control={<Radio />}
               label="Highway"
             />
@@ -77,6 +88,8 @@ const Form = () => {
       <Button
         sx={{ display: "flex", justifySelf: "center", margin: "auto" }}
         variant="contained"
+        type="button"
+        onClick={handleSubmit}
       >
         Calculate
       </Button>

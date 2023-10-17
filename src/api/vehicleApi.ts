@@ -1,47 +1,102 @@
 import axios from "axios";
 
 const vehicleApi = axios.create({
-  // baseURL: "https://www.fueleconomy.gov",
-  // baseURL: "/fuelApi",
   baseURL:
-    "https://datasource.kapsarc.org/api/explore/v2.1/catalog/datasets/us-vehicle-fuel-economy-data-1984-2017/records",
+    "https://datasource.kapsarc.org/api/explore/v2.1/catalog/datasets/us-vehicle-fuel-economy-data-1984-2017",
 });
 
-export const getFuelPrices = async () => {
-  const response = await axios.get("/fuelApi", {
-    withCredentials: false,
-    headers: { Accept: "application/json" },
-  });
-  return response.data;
-};
-
-export const getVehicleId = async (
-  year: number,
-  make: string,
-  model: string,
-) => {
-  const response = await axios.get(
-    "/vehicleIdApi",
-    // `/ws/rest/vehicle/menu/options?year=${year}&make=${make}&model=${model}`,
-    {
-      withCredentials: false,
-      headers: {
-        Accept: "application/json",
-      },
-      params: {
-        year: year,
-        make: make,
-        model: model,
-      },
-    },
+export const getCompactGasVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Compact Cars&order_by=city08 DESC",
   );
   return response.data;
 };
 
-export const getVehicleData = async (id: number) => {
-  const response = await axios.get(`vehicleDetailApi/${id}`, {
-    headers: { Accept: "application/json" },
-  });
+export const getMidsizeGasVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Midsize Cars&order_by=city08 DESC",
+  );
   return response.data;
 };
+export const getSUVGasVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getPickupGasVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getMiniVanGasVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Minivan - 2WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getCompactEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Compact Cars&order_by=city08 DESC",
+  );
+  return response.data;
+};
+
+export const getMidsizeEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Midsize Cars&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getSUVEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getPickupEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getMiniVanEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Minivan - 2WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getCompactHEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Compact Cars&order_by=city08 DESC",
+  );
+  return response.data;
+};
+
+export const getMidsizeHEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Midsize Cars&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getSUVHEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getPickupHEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+export const getMiniVanHEVVehicle = async () => {
+  const response = await vehicleApi.get(
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Minivan - 2WD&order_by=city08 DESC",
+  );
+  return response.data;
+};
+
 export default vehicleApi;

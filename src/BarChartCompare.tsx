@@ -2,7 +2,9 @@ import { BarChart } from "@mui/x-charts";
 import { useOptions } from "./context/OptionsProvider";
 import { getCurrentYear } from "./utils/getCurrentYear";
 import { useQuery } from "@tanstack/react-query";
-import getFuelPrices from "./api/vehicleApi";
+import { getFuelPrices } from "./api/fuelApi";
+import useVehicleData from "./hooks/useVehicleData";
+import useCalculateCosts from "./hooks/useCalculateCosts";
 
 const BarChartCompare = () => {
   const { options } = useOptions();
@@ -17,9 +19,24 @@ const BarChartCompare = () => {
     queryFn: getFuelPrices,
   });
 
-  if (isSuccess) console.log(fuelPrices, year);
-  if (isError) console.log(error);
+  const {
+    gasData,
+    isGasDataSuccess,
+    eVData,
+    isEVDataSuccess,
+    hEVData,
+    isHEVDataSuccess,
+  } = useVehicleData();
 
+  const { eVCost, hEVCost, gasCost } = useCalculateCosts(
+    eVData,
+    hEVData,
+    gasData,
+    fuelPrices,
+  );
+
+  console.log(eVCost, hEVCost, gasCost);
+  const chartData = [eVCost, hEVCost, gasCost];
   return (
     <div className="centered">
       <BarChart
@@ -34,7 +51,7 @@ const BarChartCompare = () => {
             data: [
               "Electric",
               "Hybrid Electric",
-              "Plugin Hybrid Electric",
+              // "Plugin Hybrid Electric",
               "Conventional Gasoline",
             ],
             scaleType: "band",
@@ -42,7 +59,7 @@ const BarChartCompare = () => {
         ]}
         series={[
           {
-            data: [2, 5, 3, 4],
+            data: [chartData[0], chartData[1], chartData[2]],
             color: "#9FB8AD",
           },
         ]}

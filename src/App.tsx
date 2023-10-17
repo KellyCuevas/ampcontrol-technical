@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Form from "./Form";
 import BarChartCompare from "./BarChartCompare";
+import { OptionsProvider } from "./context/OptionsProvider";
 
 function App() {
   const vehicleData = [
@@ -49,8 +50,10 @@ function App() {
   return (
     <>
       <Header />
-      <BarChartCompare />
-      <Form />
+      <OptionsProvider>
+        <BarChartCompare />
+        <Form />
+      </OptionsProvider>
     </>
   );
 }

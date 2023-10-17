@@ -4,6 +4,7 @@ export type Options = {
   miles: number;
   vSize: string;
   dEnv: string;
+  didSubmit: boolean;
 };
 
 interface Options_Context {
@@ -18,8 +19,9 @@ export const OptionsContext = createContext<Options_Context | undefined>(
 export const OptionsProvider = ({ children }: PropsWithChildren) => {
   const [options, setOptions] = useState<Options>({
     miles: 0,
-    vSize: "",
-    dEnv: "",
+    vSize: "Compact Cars",
+    dEnv: "city08",
+    didSubmit: false,
   });
 
   return (

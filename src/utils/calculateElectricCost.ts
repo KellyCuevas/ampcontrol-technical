@@ -7,7 +7,7 @@ export const calculateElectricCost = (
   const kwhPerOneMile = 33.7 / vehicleEfficiency;
   const costPerMile = pricePerKilowattHour * kwhPerOneMile;
   const totalElectricCost = costPerMile * totalMiles;
-  return totalElectricCost;
+  return Number(totalElectricCost.toFixed(2));
 };
 
 // console.log(calculateElectricCost(60, 0.14, 60));

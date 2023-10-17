@@ -11,16 +11,16 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/fuelApi/, ""),
       },
-      "/vehicleIdApi": {
-        target: "https://www.fueleconomy.gov/ws/rest/vehicle/menu/options",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/vehicleIdApi/, ""),
-      },
-      "/vehicleDetailApi": {
-        target: "https://www.fueleconomy.gov/ws/rest/vehicle",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/vehicleDetailApi/, ""),
-      },
+      // "/vehicleIdApi": {
+      //   target: "https://www.fueleconomy.gov/ws/rest/vehicle/menu/options",
+      //   changeOrigin: true,
+      //   rewrite: (path) => path.replace(/^\/vehicleIdApi/, ""),
+      // },
+      // "/vehicleDetailApi": {
+      //   target: "https://www.fueleconomy.gov/ws/rest/vehicle",
+      //   changeOrigin: true,
+      //   rewrite: (path) => path.replace(/^\/vehicleDetailApi/, ""),
+      // },
     },
   },
 });
