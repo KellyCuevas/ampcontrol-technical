@@ -1,27 +1,15 @@
-# React + TypeScript + Vite
+# Trip Compare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Trip Compare is a user interface to compare the estimated cost, in US dollars, of a trip of specified milage in three different vehicle types:
+      - Electric EV
+      - Hybrid HEV 
+      - Conventional Combustion Engine Gas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The vehicle data used to calculate the costs are from query results from the Vehicle Fuel Economy Data - KAPSARC Data Portal. KAPSARC uses the data cataloged and maintained by FuelEconomy.gov
 
-## Expanding the ESLint configuration
+About the dataset
+This dataset contains United State vehicle fuel economy data starting from 1984. Data from Fuel Economy.GOV. .Follow datasource.kapsarc.org for timely data to advance energy economics research. For data description please visit this link (fueleconomy.gov).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![200](https://github.com/KellyCuevas/ampcontrol-technical/assets/41708498/b0a169a3-ee77-44cb-8eba-2326801bbfb0)
