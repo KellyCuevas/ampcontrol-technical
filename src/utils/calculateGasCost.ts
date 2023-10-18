@@ -1,3 +1,5 @@
+import { GavelOutlined } from "@mui/icons-material";
+
 export const calculateGasCost = (
   vehicleEfficiency: number,
   pricePerGallon: number,
@@ -7,7 +9,7 @@ export const calculateGasCost = (
   const gallonPerOneMile = 1 / vehicleEfficiency;
   const costPerMile = pricePerGallon * gallonPerOneMile;
   const totalGasCost = costPerMile * totalMiles;
-
+  console.log(totalGasCost);
   return Number(totalGasCost.toFixed(2));
 };
 

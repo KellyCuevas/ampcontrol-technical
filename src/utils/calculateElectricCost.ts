@@ -1,3 +1,5 @@
+import { KeyboardHideTwoTone } from "@mui/icons-material";
+
 export const calculateElectricCost = (
   vehicleEfficiency: number,
   pricePerKilowattHour: number,
@@ -7,6 +9,7 @@ export const calculateElectricCost = (
   const kwhPerOneMile = 33.7 / vehicleEfficiency;
   const costPerMile = pricePerKilowattHour * kwhPerOneMile;
   const totalElectricCost = costPerMile * totalMiles;
+  console.log(totalElectricCost);
   return Number(totalElectricCost.toFixed(2));
 };
 

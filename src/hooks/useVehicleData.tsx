@@ -41,7 +41,8 @@ const useVehicleData = () => {
         return getMiniVanGasVehicle();
       }
     },
-    select: (data: any) => (data?.results ? data?.results[0] : null),
+    select: (data: any) =>
+      data?.results ? data?.results[data?.results?.length - 1] : null,
   });
   const { data: eVData, isSuccess: isEVDataSuccess } = useQuery({
     enabled: options.vSize !== "" && options.didSubmit === true,
