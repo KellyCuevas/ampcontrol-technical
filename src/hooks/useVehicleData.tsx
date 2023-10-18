@@ -32,7 +32,7 @@ const useVehicleData = () => {
         return getMidsizeGasVehicle();
       }
       if (options.vSize === "Standard Sport Utility Vehicle 4WD") {
-        return getSUVGasVehicle;
+        return getSUVGasVehicle();
       }
       if (options.vSize === "Standard Pickup Trucks 4WD") {
         return getPickupGasVehicle();
@@ -54,7 +54,7 @@ const useVehicleData = () => {
         return getMidsizeEVVehicle();
       }
       if (options.vSize === "Standard Sport Utility Vehicle 4WD") {
-        return getSUVEVVehicle;
+        return getSUVEVVehicle();
       }
       if (options.vSize === "Standard Pickup Trucks 4WD") {
         return getPickupEVVehicle();
@@ -76,7 +76,7 @@ const useVehicleData = () => {
         return getMidsizeHEVVehicle();
       }
       if (options.vSize === "Standard Sport Utility Vehicle 4WD") {
-        return getSUVHEVVehicle;
+        return getSUVHEVVehicle();
       }
       if (options.vSize === "Standard Pickup Trucks 4WD") {
         return getPickupHEVVehicle();

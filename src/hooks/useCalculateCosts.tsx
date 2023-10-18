@@ -12,9 +12,9 @@ const useCalculateCosts = (
   const { options } = useOptions();
 
   const cityOrHwy = options?.dEnv;
-  let eVCost = 2;
-  let gasCost = 5;
-  let hEVCost = 1;
+  let eVCost = 0;
+  let gasCost = 0;
+  let hEVCost = 0;
 
   const getGasCost = () => {
     if (gasData && gasData[cityOrHwy] && options?.didSubmit === true) {

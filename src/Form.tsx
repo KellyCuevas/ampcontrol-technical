@@ -17,9 +17,15 @@ const Form = () => {
   const handleChange = (e: any) => {
     e.preventDefault();
     const { value, name } = e.target;
-    setOptions((prev) => {
-      return { ...prev, [name]: value, didSubmit: false };
-    });
+    if (name !== "miles") {
+      setOptions((prev) => {
+        return { ...prev, [name]: value, didSubmit: false };
+      });
+    } else {
+      setOptions((prev) => {
+        return { ...prev, [name]: value };
+      });
+    }
   };
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -28,7 +34,7 @@ const Form = () => {
       return { ...prev, didSubmit: true };
     });
   };
-  console.log(options);
+  // console.log(options);
   return (
     <>
       <form className="options-form">
