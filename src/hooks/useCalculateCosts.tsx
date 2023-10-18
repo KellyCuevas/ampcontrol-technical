@@ -23,7 +23,7 @@ const useCalculateCosts = (
         fuelPrices?.regular,
         options?.miles,
       );
-      console.log(gasCost);
+      // console.log(gasCost);
     }
     return gasCost;
   };
