@@ -17,7 +17,7 @@ const Form = () => {
   const handleChange = (e: any) => {
     e.preventDefault();
     const { value, name } = e.target;
-    if (name !== "miles") {
+    if (name === "vSize") {
       setOptions((prev) => {
         return { ...prev, [name]: value, didSubmit: false };
       });
