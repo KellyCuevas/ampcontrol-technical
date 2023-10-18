@@ -6,9 +6,12 @@ const fuelApi = axios.create({
 });
 
 export const getFuelPrices = async () => {
-  const response = await axios.get("/fuelApi", {
-    withCredentials: false,
-    headers: { Accept: "application/json" },
-  });
+  const response = await axios.get(
+    "https://www.fueleconomy.gov/ws/rest/fuelprices",
+    {
+      withCredentials: false,
+      headers: { Accept: "application/json" },
+    },
+  );
   return response.data;
 };
