@@ -52,10 +52,10 @@ const BarChartCompare = () => {
             {
               id: "barCategories",
               data: [
-                `Electric ${eVData?.city08} ${fuelPrices?.electric}`,
-                `Hybrid Electric ${hEVData?.city08} ${fuelPrices?.electric}`,
+                "Electric ",
+                "Hybrid Electric",
                 // "Plugin Hybrid Electric",
-                `Conventional Gasoline ${gasData?.city08} ${fuelPrices?.regular}`,
+                "Conventional Gasoline",
               ],
               scaleType: "band",
             },
