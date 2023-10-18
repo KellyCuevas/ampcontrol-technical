@@ -21,6 +21,8 @@ const Form = () => {
       setOptions((prev) => {
         return { ...prev, [name]: value, didSubmit: false };
       });
+    } else if (name === "miles" && value < 1) {
+      alert("Please enter a milage greater than 0");
     } else {
       setOptions((prev) => {
         return { ...prev, [name]: value };
