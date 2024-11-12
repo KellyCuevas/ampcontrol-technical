@@ -1,4 +1,4 @@
-import { BarChart } from "@mui/x-charts";
+import { BarChart, axisClasses } from "@mui/x-charts";
 import { useOptions } from "./context/OptionsProvider";
 import { getCurrentYear } from "./utils/getCurrentYear";
 import { useQuery } from "@tanstack/react-query";
@@ -68,6 +68,23 @@ const BarChartCompare = () => {
           ]}
           width={700}
           height={300}
+          // sx={{
+          //   ".MuiChartsAxis-label": {
+          //     transformOrigin: "0px 160px",
+          //     fontWeight: "bold",
+          //   },
+          // }}
+
+          // sx={{
+          //   [`.${axisClasses.left} .${axisClasses.label} tspan`]: {
+          //     // transformOrigin: "translate(-25px, 0)",
+          //     fontWeight: "bold",
+          //     bgcolor: "secondary.main",
+          //     padding: 20,
+          //     fontSize: 14,
+          //     transform: "translate(-20px)",
+          //   },
+          // }}
         />
       </div>
       <div>

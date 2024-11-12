@@ -21,16 +21,20 @@ h1 {
   text-align: center;
 }
 
+.MuiChartsYAxis-label {
+  transform-origin: translate(-28px 160px);
+  font-weight: bold;
+}
 .centered {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.BarChart .MuiChartsXAxis-label {
+/* .MuiChartsXAxis-label {
   font: bold;
   font-size: 4rem;
   margin-left: 4rem;
-}
+} */
 .options-form {
   display: flex;
   place-content: center;

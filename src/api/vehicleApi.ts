@@ -7,94 +7,94 @@ const vehicleApi = axios.create({
 
 export const getCompactGasVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Compact Cars&exclude=atvtype:Hybrid&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Compact Cars&exclude=atvtype:Hybrid&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 
 export const getMidsizeGasVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Midsize Cars&exclude=atvtype:Hybrid&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Midsize Cars&exclude=atvtype:Hybrid&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getSUVGasVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Sport Utility Vehicle 4WD&exclude=atvtype:Hybrid&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Sport Utility Vehicle 4WD&exclude=atvtype:Hybrid&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getPickupGasVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Pickup Trucks 4WD&exclude=atvtype:Hybrid&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Standard Pickup Trucks 4WD&exclude=atvtype:Hybrid&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getMiniVanGasVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Minivan - 2WD&exclude=atvtype:Hybrid&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=vclass:Minivan - 2WD&exclude=atvtype:Hybrid&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getCompactEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Compact Cars&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Compact Cars&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 
 export const getMidsizeEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Midsize Cars&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Midsize Cars&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getSUVEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getPickupEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getMiniVanEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Minivan - 2WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Electricity&refine=vclass:Minivan - 2WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getCompactHEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Compact Cars&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Compact Cars&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 
 export const getMidsizeHEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Midsize Cars&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Midsize Cars&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getSUVHEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Sport Utility Vehicle 4WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getPickupHEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Standard Pickup Trucks 4WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
 export const getMiniVanHEVVehicle = async () => {
   const response = await vehicleApi.get(
-    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Minivan - 2WD&order_by=city08 DESC",
+    "/records?limit=50&refine=year:2023&refine=fueltype1:Regular Gasoline&refine=atvtype:Hybrid&refine=vclass:Minivan - 2WD&order_by=city08 DESC&apikey=8bc2940e2321bff01ddb0b3b1c655a405cacdf83a4762243637a072b",
   );
   return response.data;
 };
